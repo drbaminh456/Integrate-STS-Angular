@@ -11,6 +11,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,6 +33,9 @@ public class UserController {
 	private UserService userService;
 
 	@Autowired
+	private BCryptPasswordEncoder bCryptPasswordEncoder;
+	
+	@Autowired
 	private JwtTokenUtil jwtTokenUtil;
 
 	@Autowired
@@ -39,7 +43,7 @@ public class UserController {
 	// end
 
 	// region -- Methods --
-/*
+
 	@PostMapping("/sign-in")
 	public ResponseEntity<?> signIn(@RequestBody UserSignInReq req) {
 		SingleRsp res = new SingleRsp();
@@ -76,7 +80,7 @@ public class UserController {
 	}
 
 	// end
-*/
+
 	@PostMapping("/sign-up")
 	public ResponseEntity<?> signUp(@RequestBody UserSignUpReq req) {
 		SingleRsp res = new SingleRsp();
@@ -91,6 +95,7 @@ public class UserController {
 			String remarks = req.getRemarks();
 
 			String password = req.getPassword();
+			password = bCryptPasswordEncoder.encode(password);
 
 			// Convert data
 			Users m = new Users();

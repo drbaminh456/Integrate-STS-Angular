@@ -54,7 +54,7 @@ CREATE TABLE PUBLIC."user"
 	"phone_no"									VARCHAR(16),
 	"address"									VARCHAR(128),
 	"remarks"									VARCHAR(128),
-	"status"									CHARACTER(3) NOT NULL DEFAULT 'ACT',
+	"status"									CHARACTER(3) DEFAULT 'ACT',
 	"uuid"										UUID,
 	"eoth"										UUID,
 	"eoth_expiry_on"							TIMESTAMP,
