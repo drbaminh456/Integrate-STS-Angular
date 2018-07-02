@@ -16,7 +16,7 @@ import javax.persistence.TemporalType;
 @Table(name = "role", schema = "public")
 public class Role {
 	// region -- Fields --
-
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "role_id_seq_generator")
 	@SequenceGenerator(name = "role_id_seq_generator", sequenceName = "public.role_id_seq", allocationSize = 1)

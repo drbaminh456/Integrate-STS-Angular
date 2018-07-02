@@ -34,16 +34,16 @@ public class UserController {
 
 	@Autowired
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
-	
+
 	@Autowired
 	private JwtTokenUtil jwtTokenUtil;
 
 	@Autowired
 	private AuthenticationManager authenticationManager;
+	
 	// end
 
 	// region -- Methods --
-
 	@PostMapping("/sign-in")
 	public ResponseEntity<?> signIn(@RequestBody UserSignInReq req) {
 		SingleRsp res = new SingleRsp();
@@ -78,8 +78,6 @@ public class UserController {
 
 		return new ResponseEntity<>(res, HttpStatus.OK);
 	}
-
-	// end
 
 	@PostMapping("/sign-up")
 	public ResponseEntity<?> signUp(@RequestBody UserSignUpReq req) {
