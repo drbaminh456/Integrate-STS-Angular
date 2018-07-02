@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,7 +10,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "table1", schema = "public")
-public class TableModel {
+public class Test {
 	// region -- Fields --
 
 	@Id
@@ -18,13 +18,16 @@ public class TableModel {
 	@SequenceGenerator(name = "table1_id_seq_generator", sequenceName = "public.table1_id_seq", allocationSize = 1)
 	@Column(columnDefinition = "SERIAL")
 	private Integer id;
-	
+
 	@Column(columnDefinition = "varchar(64)")
 	private String first_name;
-	
+
 	@Column(columnDefinition = "varchar(64)")
 	private String last_name;
 
+	// end
+
+	// region -- Get set --
 	public Integer getId() {
 		return id;
 	}
@@ -48,4 +51,13 @@ public class TableModel {
 	public void setLast_name(String last_name) {
 		this.last_name = last_name;
 	}
+
+	// end
+
+	// region -- Methods --
+	public Test() {
+	}
+
+	// end
+
 }
