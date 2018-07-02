@@ -39,7 +39,7 @@ public class UserController {
 	// end
 
 	// region -- Methods --
-
+/*
 	@PostMapping("/sign-in")
 	public ResponseEntity<?> signIn(@RequestBody UserSignInReq req) {
 		SingleRsp res = new SingleRsp();
@@ -76,7 +76,7 @@ public class UserController {
 	}
 
 	// end
-
+*/
 	@PostMapping("/sign-up")
 	public ResponseEntity<?> signUp(@RequestBody UserSignUpReq req) {
 		SingleRsp res = new SingleRsp();
