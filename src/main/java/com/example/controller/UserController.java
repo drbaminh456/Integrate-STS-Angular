@@ -40,7 +40,7 @@ public class UserController {
 
 	@Autowired
 	private AuthenticationManager authenticationManager;
-	
+
 	// end
 
 	// region -- Methods --
